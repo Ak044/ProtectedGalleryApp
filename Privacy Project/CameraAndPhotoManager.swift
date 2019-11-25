@@ -10,13 +10,19 @@ import UIKit
 
 class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    
     @IBOutlet weak var imageView: UIImageView!
+    var image: UIImage! 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func chooseImage(_ sender: Any) {
+        
+        print("choose image")
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -35,6 +41,7 @@ class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, 
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
+            print("photo lib")
             self.present(imagePickerController, animated: true, completion: nil)
             
         }))
@@ -45,16 +52,61 @@ class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+    //func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any], imageName: String) {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+       
+        print("image picker controller")
+        
+        //get the image path
+        //let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        //print(imagePath)
+
+        
+        let myimage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+       // image = UIImage(info[UIImagePickerController.InfoKey.originalImage])
+        image = myimage
+        
+        if image != nil {
+             print("Contains a value!")
+         } else {
+             print("Doesn’t contain a value.")
+         }
+        
+       
+        //added code
+        let fileManager = FileManager.default
+
+        //Code to send to private gallery
+        //get the PNG data for this image
+        let data = image.pngData()
+        
+        //store it in the document directory
+        //fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
         
         imageView.image = image
         
+        
         picker.dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+        var vc = segue.destination as! PrivateGallery
+        vc.finalImage = image
+      
+        if image != nil {
+              print("Contains a value segway code!")
+          } else {
+              print("Doesn’t contain a value. Segway")
+          }
+        
+    }
 }
+

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHH-zk-rMY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHH-zk-rMY">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -106,13 +106,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbw-ek-qTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3356" y="-2529"/>
+            <point key="canvasLocation" x="3321" y="-2861"/>
         </scene>
         <!--Storage/Gallery-->
         <scene sceneID="SX4-iY-X8N">
             <objects>
                 <viewController title="Storage/Gallery" id="tN4-zo-CCG" customClass="PrivateGallery" customModule="Privacy_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l8h-ee-hCY">
+                    <view key="view" contentMode="scaleToFill" id="l8h-ee-hCY" customClass="Priv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -185,6 +185,10 @@ Photo Storage</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="Private Gallery"/>
+                                <connections>
+                                    <action selector="PrivateGallery:" destination="LO3-iA-J09" eventType="touchUpInside" id="caP-b6-SF2"/>
+                                    <segue destination="tN4-zo-CCG" kind="show" id="gtC-HC-ku6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-KT-XtY">
                                 <rect key="frame" x="16" y="115" width="343" height="49"/>
@@ -217,8 +221,12 @@ Photo Storage</string>
                     <navigationItem key="navigationItem" title="Privacy Project Main Menu" id="aaL-lx-9lz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzy-Cj-gM4" sceneMemberID="firstResponder"/>
+                <exit id="LO3-iA-J09" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2565.5999999999999" y="-2532.6836581709149"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kR7-Sh-Vj8"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,9 @@ import Photos
 
 class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate{
     
+    @IBOutlet weak var browsingImage: UIImageView!
+    var finalImage: UIImage!
+    
     // Two variables for the colelction view and
     // image array
     var myCollectionView: UICollectionView!
@@ -18,10 +21,20 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
     
     
     override func viewDidLoad() {
+        print("Private Gallery Executed.")
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "Photos"
+        if finalImage != nil {
+            print("Contains a value!")
+        } else {
+            print("Doesn’t contain a value.")
+        }
+        
+       // browsingImage.image = finalImage
+        
+        self.title = "Private Photos"
                
                 // This initializes the collection view
                let layout = UICollectionViewFlowLayout()
@@ -34,8 +47,15 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
                self.view.addSubview(myCollectionView)
                
         myCollectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
-               
-           //    grabPhotos()
+          
+        imageArray = []
+
+        if finalImage != nil
+        {
+          //  imageArray = []
+            grabPhotos()
+        }
+        
         
     }
 
@@ -87,11 +107,15 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
     }
     
     //This function is to grab the photos
-    //from public gallery, but it needs to be edited
-    //to only grab pictures the user wants, right now
-    // it grabs all photos from public gallery
+    //from the camera
     func grabPhotos(){
-        imageArray = []
+     
+       //imageArray = []
+        self.imageArray.append(finalImage)
+        
+    
+        
+        /*imageArray = []
         
         DispatchQueue.global(qos: .background).async {
             print("This is run on the background queue")
@@ -122,11 +146,13 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
                 print("This is run on the main queue, after the previous code in outer block")
                 self.myCollectionView.reloadData()
             }
-        }
+        }*/
     }
     
     @IBAction func onGoToPrivacyProject(_ sender: Any) {
     }
+    
+    
     
 }
 

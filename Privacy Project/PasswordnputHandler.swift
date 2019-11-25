@@ -108,7 +108,7 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
+        /*
         if textField == self.clinicTextBox {
             self.clinicDropDown.isHidden = false
             //if you don't want the users to see the keyboard type:
@@ -121,11 +121,16 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
             textField.endEditing(true)
             
         }
+        */
+        if textField == self.accessCodeTextField{
+            
+        }
+        }
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        //self.view.endEditing(true)
         return true
     }
     
@@ -141,4 +146,4 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     */
 
-}
+//}
