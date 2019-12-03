@@ -10,8 +10,6 @@ import UIKit
 
 class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage! 
     
@@ -75,11 +73,11 @@ class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, 
         
        
         //added code
-        let fileManager = FileManager.default
+      //  let fileManager = FileManager.default
 
         //Code to send to private gallery
         //get the PNG data for this image
-        let data = image.pngData()
+       // let data = image.pngData()
         
         //store it in the document directory
         //fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
@@ -98,8 +96,8 @@ class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, 
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
-        var vc = segue.destination as! PrivateGallery
-        vc.finalImage = image
+        let vc = segue.destination as! ViewController
+        vc.Image = image
       
         if image != nil {
               print("Contains a value segway code!")

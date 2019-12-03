@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 extension String {
 
@@ -40,9 +41,8 @@ extension String {
     }
 }
 
-
 class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-
+    
     @IBOutlet weak var clinicTextBox: UITextField!
     @IBOutlet weak var clinicDropDown: UIPickerView!
     
@@ -55,6 +55,74 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var patientDOB: UITextField!
     @IBOutlet weak var patientPasword: UITextField!
     
+    @IBOutlet weak var enteredPasswordTextField: UITextField!
+    
+    var correctPassword = "12345"
+    @IBAction func checkPassword(_ sender: Any) {
+        
+        let passwordEntered = enteredPasswordTextField.text;
+        if (passwordEntered?.isEmpty ?? false) {
+            displayMyAlertMessage(userMessage: "Please enter the password ");
+            return;
+        }
+        if( passwordEntered != correctPassword ) {
+            displayMyAlertMessage(userMessage: "Please enter correct password  ");
+            return;
+        }
+        
+    }
+     // Display alert message
+    func displayMyAlertMessage(userMessage: String) {
+        
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle:UIAlertController.Style.alert);
+        let okAction = UIAlertAction(title:"OK" , style: UIAlertAction.Style.default, handler: nil);
+        myAlert.addAction(okAction);
+        self.present(myAlert, animated:true, completion:nil);
+    }
+    
+    // Touch ID setup
+    
+    @IBAction func touchID(_ sender: Any) {
+        let context : LAContext = LAContext();
+
+        if(context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)) {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message - Touch ID") { (good, error) in
+                if(good){
+                    print("Good")
+                }
+                else{
+                    print("Try Again")
+                }
+            }
+        }
+
+
+
+    }
+    
+    
+    // Face ID set up
+
+    @IBAction func faceID(_ sender: Any) {
+
+        let context : LAContext = LAContext();
+
+            if(context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)) {
+                context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message - Face ID") { (good, error) in
+                    if(good){
+                        print("Good")
+                    }
+                    else{
+                        print("Try Again")
+                    }
+                }
+            }
+
+
+
+    }
+    
+    
     
     //Clinic List
     var clinicList = ["Mercy","Sparks"]
@@ -64,8 +132,14 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        enteredPasswordTextField.delegate = self;
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -77,62 +151,62 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
         if pickerView == therapistDropDown {
             countrows = therapistList.count
         }
-        
+
         return countrows
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if pickerView == clinicDropDown {
-            let titleRow = clinicList[row]
-            return titleRow
-        }
-        
-        else if pickerView == therapistDropDown {
-            let titleRow = therapistList[row]
-            return titleRow
-        }
-        
-        self.view.endEditing(true)
-        return ""
-    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//
+//        if pickerView == clinicDropDown {
+//            let titleRow = clinicList[row]
+//            return titleRow
+//        }
+//
+//        else if pickerView == therapistDropDown {
+//            let titleRow = therapistList[row]
+//            return titleRow
+//        }
+//
+//        self.view.endEditing(true)
+//        return ""
+//    }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == clinicDropDown{
-            self.clinicTextBox.text = self.clinicList[row]
-            self.clinicDropDown.isHidden = true
-        }
-        else if pickerView == therapistDropDown{
-            self.therapistTextBox.text = self.therapistList[row]
-            self.therapistDropDown.isHidden = true        }
-    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if pickerView == clinicDropDown{
+//            self.clinicTextBox.text = self.clinicList[row]
+//            self.clinicDropDown.isHidden = true
+//        }
+//        else if pickerView == therapistDropDown{
+//            self.therapistTextBox.text = self.therapistList[row]
+//            self.therapistDropDown.isHidden = true        }
+//    }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        /*
-        if textField == self.clinicTextBox {
-            self.clinicDropDown.isHidden = false
-            //if you don't want the users to see the keyboard type:
-            
-            textField.endEditing(true)
-        }
-        else if (textField == self.therapistTextBox){
-            self.therapistDropDown.isHidden = false
-            
-            textField.endEditing(true)
-            
-        }
-        */
-        if textField == self.accessCodeTextField{
-            
-        }
-        }
-        
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        /*
+//        if textField == self.clinicTextBox {
+//            self.clinicDropDown.isHidden = false
+//            //if you don't want the users to see the keyboard type:
+//
+//            textField.endEditing(true)
+//        }
+//        else if (textField == self.therapistTextBox){
+//            self.therapistDropDown.isHidden = false
+//
+//            textField.endEditing(true)
+//
+//        }
+//        */
+//        if textField == self.accessCodeTextField{
+//
+//        }
+//        }
+//
+//    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //self.view.endEditing(true)
-        return true
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        //self.view.endEditing(true)
+//        return true
+//    }
     
     
     
@@ -146,4 +220,4 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     */
 
-//}
+}

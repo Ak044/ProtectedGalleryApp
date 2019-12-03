@@ -10,7 +10,6 @@ import UIKit
 
 class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    
     var myCollectionView: UICollectionView!
     var imgArray = [UIImage]()
     var passedContentOffset = IndexPath()

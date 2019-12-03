@@ -9,11 +9,13 @@
 import UIKit
 import Photos
 
+//var finalImage: UIImage!
+
 class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate{
     
     @IBOutlet weak var browsingImage: UIImageView!
     var finalImage: UIImage!
-    
+
     // Two variables for the colelction view and
     // image array
     var myCollectionView: UICollectionView!
@@ -113,8 +115,10 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
        //imageArray = []
         self.imageArray.append(finalImage)
         
-    
+        self.myCollectionView.reloadData()
+
         
+
         /*imageArray = []
         
         DispatchQueue.global(qos: .background).async {
