@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010FD51E1839FD243CE7F902 /* Pods_Privacy_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D152BB870EF977B82D7BE0A2 /* Pods_Privacy_ProjectTests.framework */; };
+		05333D282399D004007FAE55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05333D272399D004007FAE55 /* GoogleService-Info.plist */; };
 		054F60AF2395E85800DD2148 /* ProtectedGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F60AE2395E85800DD2148 /* ProtectedGallery.swift */; };
 		054F60B12395EFF400DD2148 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F60B02395EFF400DD2148 /* ImageCollectionViewCell.swift */; };
 		058F95602213BFAC0020519E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058F955E2213BFAC0020519E /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		0591DFB221F3883800A4EC03 /* Privacy_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591DFB121F3883800A4EC03 /* Privacy_ProjectTests.swift */; };
 		0591DFBD21F3883800A4EC03 /* Privacy_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591DFBC21F3883800A4EC03 /* Privacy_ProjectUITests.swift */; };
 		05BA417A239886F700844A5C /* decoyGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA4179239886F700844A5C /* decoyGallery.swift */; };
+		05BA417C2399B91000844A5C /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA417B2399B91000844A5C /* Dummy.swift */; };
 		05C224AA236B89F100D969A1 /* PrivateGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C224A9236B89F100D969A1 /* PrivateGallery.swift */; };
 		05EFC20221F7B2F9006B734F /* PasswordnputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFC20121F7B2F9006B734F /* PasswordnputHandler.swift */; };
 		20CCC48123849A87000E7A13 /* ImagePreviewVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCC48023849A87000E7A13 /* ImagePreviewVCViewController.swift */; };
@@ -45,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05333D272399D004007FAE55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		054F60AE2395E85800DD2148 /* ProtectedGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectedGallery.swift; sourceTree = "<group>"; };
 		054F60B02395EFF400DD2148 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		058F955F2213BFAC0020519E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Home Guardian/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		0591DFBC21F3883800A4EC03 /* Privacy_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy_ProjectUITests.swift; sourceTree = "<group>"; };
 		0591DFBE21F3883800A4EC03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05BA4179239886F700844A5C /* decoyGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decoyGallery.swift; sourceTree = "<group>"; };
+		05BA417B2399B91000844A5C /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		05C224A9236B89F100D969A1 /* PrivateGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateGallery.swift; sourceTree = "<group>"; };
 		05EFC20121F7B2F9006B734F /* PasswordnputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordnputHandler.swift; sourceTree = "<group>"; };
 		18E9926BDCF6A52F82630FC3 /* Pods-Privacy ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Privacy ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Privacy ProjectTests/Pods-Privacy ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,10 +143,12 @@
 				05EFC20121F7B2F9006B734F /* PasswordnputHandler.swift */,
 				0591DFA321F3883800A4EC03 /* Assets.xcassets */,
 				0591DFA821F3883800A4EC03 /* Info.plist */,
+				05333D272399D004007FAE55 /* GoogleService-Info.plist */,
 				0591DFA021F3883500A4EC03 /* Home_Guardian.xcdatamodeld */,
 				05C224A9236B89F100D969A1 /* PrivateGallery.swift */,
 				20CCC48023849A87000E7A13 /* ImagePreviewVCViewController.swift */,
 				054F60AE2395E85800DD2148 /* ProtectedGallery.swift */,
+				05BA417B2399B91000844A5C /* Dummy.swift */,
 				05BA4179239886F700844A5C /* decoyGallery.swift */,
 			);
 			path = "Privacy Project";
@@ -302,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058F95602213BFAC0020519E /* Main.storyboard in Resources */,
+				05333D282399D004007FAE55 /* GoogleService-Info.plist in Resources */,
 				0591DFA721F3883800A4EC03 /* LaunchScreen.storyboard in Resources */,
 				0591DFA421F3883800A4EC03 /* Assets.xcassets in Resources */,
 			);
@@ -433,6 +440,7 @@
 			files = (
 				0591DF9C21F3883500A4EC03 /* ViewController.swift in Sources */,
 				0591DFA221F3883500A4EC03 /* Home_Guardian.xcdatamodeld in Sources */,
+				05BA417C2399B91000844A5C /* Dummy.swift in Sources */,
 				05C224AA236B89F100D969A1 /* PrivateGallery.swift in Sources */,
 				054F60AF2395E85800DD2148 /* ProtectedGallery.swift in Sources */,
 				0591DF9A21F3883500A4EC03 /* AppDelegate.swift in Sources */,
@@ -623,7 +631,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Fall-Prevention.Home-Guardian498";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PG2.firebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -642,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Fall-Prevention.Home-Guardian498";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PG2.firebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

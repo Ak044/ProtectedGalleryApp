@@ -8,6 +8,8 @@
 
 import UIKit
 import Photos
+import Firebase
+
 
 //var finalImage: UIImage!
 
