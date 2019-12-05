@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
 
 class ProtectedGallery: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var imageCollection: UICollectionView!
+    {
+        didSet{
+            imageCollection.dataSource = self
+            imageCollection.delegate = self as! UICollectionViewDelegate
+            
+        }
+    }
     var images = [UIImage]()
     
     

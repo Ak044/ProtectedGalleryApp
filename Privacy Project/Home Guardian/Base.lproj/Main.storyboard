@@ -41,7 +41,6 @@
                                 </state>
                                 <connections>
                                     <action selector="checkPassword:" destination="Gec-IW-rRh" eventType="touchUpInside" id="qhf-c7-2sc"/>
-                                    <segue destination="ToQ-2a-u87" kind="show" id="GPL-xW-fFp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,11 +59,13 @@
                     <connections>
                         <outlet property="accessCodeTextField" destination="nIS-zc-mUc" id="nWt-2L-gpC"/>
                         <outlet property="enteredPasswordTextField" destination="nIS-zc-mUc" id="jyz-zd-DqK"/>
+                        <segue destination="gzu-cc-h4N" kind="show" identifier="Decoy" id="0cO-kl-Wpo"/>
+                        <segue destination="ToQ-2a-u87" kind="show" identifier="Private" id="Ckb-Eu-rMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLn-aF-RVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="-2529.0854572713647"/>
+            <point key="canvasLocation" x="1762" y="-2552"/>
         </scene>
         <!--Camera and Photo Manager-->
         <scene sceneID="xwk-ag-os0">
@@ -244,18 +245,16 @@ Photo Storage</string>
         <!--Storage/Gallery-->
         <scene sceneID="mR9-UB-fAF">
             <objects>
-                <viewController title="Storage/Gallery" id="gzu-cc-h4N" customClass="PrivateGallery" customModule="Privacy_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Storage/Gallery" id="gzu-cc-h4N" customClass="decoyGallery" customModule="Privacy_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DaQ-d1-cUb" customClass="Priv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1k-X7-LOg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decoy Gallery" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1k-X7-LOg">
                                 <rect key="frame" x="16" y="214" width="343" height="239"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="239" id="6rV-s8-SXq"/>
                                 </constraints>
-                                <string key="text">Placeholder for Successful
-Photo Storage</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -273,7 +272,7 @@ Photo Storage</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IO5-MD-ZLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4057" y="-1812"/>
+            <point key="canvasLocation" x="4057" y="-1714"/>
         </scene>
         <!--Protected Gallery-->
         <scene sceneID="15x-0H-sVU">
@@ -297,7 +296,7 @@ Photo Storage</string>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="qIM-Sw-VWX" customClass="ImageCollectionViewCell" customModule="Privacy_Project" customModuleProvider="target">
                                         <rect key="frame" x="68" y="0.0" width="239" height="223"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1lM-1J-JSX">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1lM-1J-JSX" customClass="UIImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="239" height="223"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -310,6 +309,7 @@ Photo Storage</string>
                                         <size key="customSize" width="239" height="223"/>
                                         <connections>
                                             <outlet property="imageVIiew" destination="OCF-YO-B4A" id="8CS-xi-ldk"/>
+                                            <outlet property="imageView" destination="OCF-YO-B4A" id="d1Z-d6-BMC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -324,7 +324,7 @@ Photo Storage</string>
                     </view>
                     <navigationItem key="navigationItem" id="YOa-5m-G6n"/>
                     <connections>
-                        <outlet property="imageCollection" destination="9Yv-hw-XHh" id="B4p-0I-9I9"/>
+                        <outlet property="imageCollection" destination="9Yv-hw-XHh" id="ENn-mA-rHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTj-YO-v60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,6 +333,6 @@ Photo Storage</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GPL-xW-fFp"/>
+        <segue reference="Ckb-Eu-rMj"/>
     </inferredMetricsTieBreakers>
 </document>

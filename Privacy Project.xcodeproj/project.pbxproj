@@ -19,6 +19,7 @@
 		0591DFA721F3883800A4EC03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0591DFA521F3883800A4EC03 /* LaunchScreen.storyboard */; };
 		0591DFB221F3883800A4EC03 /* Privacy_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591DFB121F3883800A4EC03 /* Privacy_ProjectTests.swift */; };
 		0591DFBD21F3883800A4EC03 /* Privacy_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591DFBC21F3883800A4EC03 /* Privacy_ProjectUITests.swift */; };
+		05BA417A239886F700844A5C /* decoyGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA4179239886F700844A5C /* decoyGallery.swift */; };
 		05C224AA236B89F100D969A1 /* PrivateGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C224A9236B89F100D969A1 /* PrivateGallery.swift */; };
 		05EFC20221F7B2F9006B734F /* PasswordnputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFC20121F7B2F9006B734F /* PasswordnputHandler.swift */; };
 		20CCC48123849A87000E7A13 /* ImagePreviewVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCC48023849A87000E7A13 /* ImagePreviewVCViewController.swift */; };
@@ -61,6 +62,7 @@
 		0591DFB821F3883800A4EC03 /* Privacy ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Privacy ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0591DFBC21F3883800A4EC03 /* Privacy_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy_ProjectUITests.swift; sourceTree = "<group>"; };
 		0591DFBE21F3883800A4EC03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BA4179239886F700844A5C /* decoyGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decoyGallery.swift; sourceTree = "<group>"; };
 		05C224A9236B89F100D969A1 /* PrivateGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateGallery.swift; sourceTree = "<group>"; };
 		05EFC20121F7B2F9006B734F /* PasswordnputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordnputHandler.swift; sourceTree = "<group>"; };
 		18E9926BDCF6A52F82630FC3 /* Pods-Privacy ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Privacy ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Privacy ProjectTests/Pods-Privacy ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				05C224A9236B89F100D969A1 /* PrivateGallery.swift */,
 				20CCC48023849A87000E7A13 /* ImagePreviewVCViewController.swift */,
 				054F60AE2395E85800DD2148 /* ProtectedGallery.swift */,
+				05BA4179239886F700844A5C /* decoyGallery.swift */,
 			);
 			path = "Privacy Project";
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				05C224AA236B89F100D969A1 /* PrivateGallery.swift in Sources */,
 				054F60AF2395E85800DD2148 /* ProtectedGallery.swift in Sources */,
 				0591DF9A21F3883500A4EC03 /* AppDelegate.swift in Sources */,
+				05BA417A239886F700844A5C /* decoyGallery.swift in Sources */,
 				20CCC48123849A87000E7A13 /* ImagePreviewVCViewController.swift in Sources */,
 				054F60B12395EFF400DD2148 /* ImageCollectionViewCell.swift in Sources */,
 				058F9564221C31D50020519E /* CameraAndPhotoManager.swift in Sources */,

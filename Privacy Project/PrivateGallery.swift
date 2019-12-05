@@ -13,7 +13,6 @@ import Photos
 
 class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate{
     
-    @IBOutlet weak var browsingImage: UIImageView!
     var finalImage: UIImage!
 
     // Two variables for the colelction view and
@@ -100,22 +99,22 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
         myCollectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+ /*   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
-    }
+    }*/
     
     //This function is to grab the photos
     //from the camera
     func grabPhotos(){
      
        //imageArray = []
-        self.imageArray.append(finalImage)
+   //     self.imageArray.append(finalImage)
         
-        self.myCollectionView.reloadData()
+     //   self.myCollectionView.reloadData()
 
         
 

@@ -57,7 +57,9 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBOutlet weak var enteredPasswordTextField: UITextField!
     
-    var correctPassword = "12345"
+    var correctPassword = "private"
+    var decoyPassword = "decoy"
+    
     @IBAction func checkPassword(_ sender: Any) {
         
         let passwordEntered = enteredPasswordTextField.text;
@@ -65,7 +67,13 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
             displayMyAlertMessage(userMessage: "Please enter the password ");
             return;
         }
-        if( passwordEntered != correctPassword ) {
+        else if(passwordEntered == decoyPassword){
+            performSegue(withIdentifier: "Decoy", sender: self)
+        }
+        else if(passwordEntered == correctPassword){
+            performSegue(withIdentifier: "Private", sender: self)
+        }
+        else {
             displayMyAlertMessage(userMessage: "Please enter correct password  ");
             return;
         }
