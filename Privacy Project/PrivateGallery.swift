@@ -2,8 +2,8 @@
 //  PrivateGallery.swift
 //  Privacy Project
 //
-//  Created by Timothy Dai on 10/31/19.
-//  Copyright © 2019 Capstone. All rights reserved.
+//  Created by Timothy/Ammar/Chandra on 10/31/19.
+//  Copyright © 2019 PETS. All rights reserved.
 //
 
 import UIKit

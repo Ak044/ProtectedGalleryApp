@@ -2,14 +2,13 @@
 //  ProtectedGallery.swift
 //  Privacy Project
 //
-//  Created by Timothy Dai on 12/2/19.
-//  Copyright © 2019 Capstone. All rights reserved.
+//  Created by Timothy/Ammar/Chandra on 12/2/19.
+//  Copyright © 2019 PETS. All rights reserved.
 //
 
 import UIKit
 import Firebase
 import FirebaseAuth
-
 
 class ProtectedGallery: UIViewController, UICollectionViewDataSource {
     
@@ -17,7 +16,7 @@ class ProtectedGallery: UIViewController, UICollectionViewDataSource {
     {
         didSet{
             imageCollection.dataSource = self
-            imageCollection.delegate = self as! UICollectionViewDelegate
+            imageCollection.delegate = self as? UICollectionViewDelegate
             
         }
     }
@@ -53,6 +52,5 @@ class ProtectedGallery: UIViewController, UICollectionViewDataSource {
         return cell
         
     }
-    
     
 }

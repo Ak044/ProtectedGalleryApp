@@ -2,8 +2,8 @@
 //  ImagePreviewVCViewController.swift
 //  Privacy Project
 //
-//  Created by Chandra Sekhar Hari on 11/19/19.
-//  Copyright © 2019 Capstone. All rights reserved.
+//  Created by Timothy/Ammar/Chandra on 11/19/19.
+//  Copyright © 2019 PETS. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     self.view.backgroundColor=UIColor.black
     
     let layout = UICollectionViewFlowLayout()

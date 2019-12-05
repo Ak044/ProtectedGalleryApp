@@ -2,8 +2,8 @@
 //  decoyGallery.swift
 //  Privacy Project
 //
-//  Created by Timothy Dai on 12/4/19.
-//  Copyright © 2019 Capstone. All rights reserved.
+//  Created by Timothy/Ammar/Chandra on 12/4/19.
+//  Copyright © 2019 PETS. All rights reserved.
 //
 
 import Foundation

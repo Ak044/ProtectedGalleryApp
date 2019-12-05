@@ -41,20 +41,9 @@ extension String {
     }
 }
 
-class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-    
-    @IBOutlet weak var clinicTextBox: UITextField!
-    @IBOutlet weak var clinicDropDown: UIPickerView!
-    
-    @IBOutlet weak var therapistTextBox: UITextField!
-    @IBOutlet weak var therapistDropDown: UIPickerView!
+class PasswordInputHandler: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var accessCodeTextField: UITextField!
-    
-    @IBOutlet weak var patientName: UITextField!
-    @IBOutlet weak var patientDOB: UITextField!
-    @IBOutlet weak var patientPasword: UITextField!
-    
     @IBOutlet weak var enteredPasswordTextField: UITextField!
     
     var correctPassword = "private"
@@ -89,7 +78,6 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     // Touch ID setup
-    
     @IBAction func touchID(_ sender: Any) {
         let context : LAContext = LAContext();
 
@@ -108,9 +96,7 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     }
     
-    
     // Face ID set up
-
     @IBAction func faceID(_ sender: Any) {
 
         let context : LAContext = LAContext();
@@ -125,18 +111,7 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
                     }
                 }
             }
-
-
-
     }
-    
-    
-    
-    //Clinic List
-    var clinicList = ["Mercy","Sparks"]
-    
-    //Therapist List
-    var therapistList = ["Adam","Bob"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,74 +124,6 @@ class PasswordInputHandler: UIViewController, UIPickerViewDataSource, UIPickerVi
         textField.resignFirstResponder()
         return true
     }
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        var countrows: Int = clinicList.count
-        if pickerView == therapistDropDown {
-            countrows = therapistList.count
-        }
-
-        return countrows
-    }
-    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//
-//        if pickerView == clinicDropDown {
-//            let titleRow = clinicList[row]
-//            return titleRow
-//        }
-//
-//        else if pickerView == therapistDropDown {
-//            let titleRow = therapistList[row]
-//            return titleRow
-//        }
-//
-//        self.view.endEditing(true)
-//        return ""
-//    }
-    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if pickerView == clinicDropDown{
-//            self.clinicTextBox.text = self.clinicList[row]
-//            self.clinicDropDown.isHidden = true
-//        }
-//        else if pickerView == therapistDropDown{
-//            self.therapistTextBox.text = self.therapistList[row]
-//            self.therapistDropDown.isHidden = true        }
-//    }
-    
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        /*
-//        if textField == self.clinicTextBox {
-//            self.clinicDropDown.isHidden = false
-//            //if you don't want the users to see the keyboard type:
-//
-//            textField.endEditing(true)
-//        }
-//        else if (textField == self.therapistTextBox){
-//            self.therapistDropDown.isHidden = false
-//
-//            textField.endEditing(true)
-//
-//        }
-//        */
-//        if textField == self.accessCodeTextField{
-//
-//        }
-//        }
-//
-//    }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        //self.view.endEditing(true)
-//        return true
-//    }
-    
-    
     
     /*
     // MARK: - Navigation
