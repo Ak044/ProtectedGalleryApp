@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLn-aF-RVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="-2552"/>
+            <point key="canvasLocation" x="1609" y="-2552"/>
         </scene>
         <!--Camera and Photo Manager-->
         <scene sceneID="xwk-ag-os0">
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbw-ek-qTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321" y="-2861"/>
+            <point key="canvasLocation" x="3401" y="-3287"/>
         </scene>
         <!--Storage/Gallery-->
         <scene sceneID="SX4-iY-X8N">
@@ -146,7 +146,7 @@ Photo Storage</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jk5-8j-8HW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4056.8000000000002" y="-2529.0854572713647"/>
+            <point key="canvasLocation" x="3401" y="-2552"/>
         </scene>
         <!--App Navigator-->
         <scene sceneID="sB3-bE-j3m">
@@ -164,7 +164,7 @@ Photo Storage</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yx8-3G-aq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="-2529"/>
+            <point key="canvasLocation" x="783" y="-2552"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="l1I-Tc-PSA">
@@ -240,7 +240,7 @@ Photo Storage</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzy-Cj-gM4" sceneMemberID="firstResponder"/>
                 <exit id="LO3-iA-J09" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2565.5999999999999" y="-2532.6836581709149"/>
+            <point key="canvasLocation" x="2566" y="-2552"/>
         </scene>
         <!--Storage/Gallery-->
         <scene sceneID="mR9-UB-fAF">
@@ -272,7 +272,7 @@ Photo Storage</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IO5-MD-ZLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4057" y="-1714"/>
+            <point key="canvasLocation" x="1609" y="-3287"/>
         </scene>
         <!--Protected Gallery-->
         <scene sceneID="15x-0H-sVU">
@@ -328,7 +328,7 @@ Photo Storage</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTj-YO-v60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832.8" y="-1769.865067466267"/>
+            <point key="canvasLocation" x="1609" y="-1770"/>
         </scene>
         <!--Protected Gallery-->
         <scene sceneID="uU8-KH-29b">
@@ -344,7 +344,7 @@ Photo Storage</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySF-ST-dcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-1755"/>
+            <point key="canvasLocation" x="2566" y="-1770"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
