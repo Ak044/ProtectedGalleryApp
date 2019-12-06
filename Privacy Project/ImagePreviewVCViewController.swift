@@ -16,29 +16,26 @@ class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor=UIColor.black
+        // Do any additional setup after loading the view.
+        self.view.backgroundColor=UIColor.black
     
-    let layout = UICollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    layout.minimumInteritemSpacing=0
-    layout.minimumLineSpacing=0
-    layout.scrollDirection = .horizontal
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumInteritemSpacing=0
+        layout.minimumLineSpacing=0
+        layout.scrollDirection = .horizontal
     
-    myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-    myCollectionView.delegate=self
-    myCollectionView.dataSource=self
-    myCollectionView.register(ImagePreviewFullViewCell.self, forCellWithReuseIdentifier: "Cell")
-    myCollectionView.isPagingEnabled = true
-    myCollectionView.scrollToItem(at: passedContentOffset, at: .left, animated: true)
+        myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        myCollectionView.delegate=self
+        myCollectionView.dataSource=self
+        myCollectionView.register(ImagePreviewFullViewCell.self, forCellWithReuseIdentifier: "Cell")
+        myCollectionView.isPagingEnabled = true
+        myCollectionView.scrollToItem(at: passedContentOffset, at: .left, animated: true)
     
-    self.view.addSubview(myCollectionView)
+        self.view.addSubview(myCollectionView)
     
         myCollectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
-    
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imgArray.count
@@ -50,17 +47,11 @@ class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
     
-
-
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
         guard let flowLayout = myCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        
         flowLayout.itemSize = myCollectionView.frame.size
-        
         flowLayout.invalidateLayout()
-        
         myCollectionView.collectionViewLayout.invalidateLayout()
     }
     
@@ -68,7 +59,6 @@ class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, 
         super.viewWillTransition(to: size, with: coordinator)
         let offset = myCollectionView.contentOffset
         let width  = myCollectionView.bounds.size.width
-        
         let index = round(offset.x / width)
         let newOffset = CGPoint(x: index * size.width, y: offset.y)
         
@@ -76,7 +66,6 @@ class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, 
         
         coordinator.animate(alongsideTransition: { (context) in
             self.myCollectionView.reloadData()
-            
             self.myCollectionView.setContentOffset(newOffset, animated: false)
         }, completion: nil)
     }
@@ -90,13 +79,9 @@ class ImagePreviewVCViewController: UIViewController, UICollectionViewDelegate, 
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
-
-
 class ImagePreviewFullViewCell: UICollectionViewCell, UIScrollViewDelegate {
-    
     var scrollImg: UIScrollView!
     var imgView: UIImageView!
     
@@ -109,7 +94,6 @@ class ImagePreviewFullViewCell: UICollectionViewCell, UIScrollViewDelegate {
         scrollImg.alwaysBounceHorizontal = false
         scrollImg.showsVerticalScrollIndicator = true
         scrollImg.flashScrollIndicators()
-        
         scrollImg.minimumZoomScale = 1.0
         scrollImg.maximumZoomScale = 4.0
         

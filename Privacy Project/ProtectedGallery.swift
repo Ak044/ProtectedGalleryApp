@@ -11,13 +11,11 @@ import Firebase
 import FirebaseAuth
 
 class ProtectedGallery: UIViewController, UICollectionViewDataSource {
-
     @IBOutlet var imageCollection: UICollectionView!
     {
         didSet{
             imageCollection.dataSource = self
             imageCollection.delegate = self as? UICollectionViewDelegate
-            
         }
     }
     
@@ -30,28 +28,20 @@ class ProtectedGallery: UIViewController, UICollectionViewDataSource {
             
         }
     }
- 
- */
+    */
     var images = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //print("Protected Gallery reached") //executed
         loadImages()
-        //print("Protected Gallery loadimages executed") //executed
-        
     }
     
-    func loadImages()
-    {
+    func loadImages(){
         //images.append(UIImage(named: "image1")!)
         images.append(UIImage(named: "image1")!)
         images.append(UIImage(named: "image1")!)
-
-
         self.imageCollection.reloadData()
-
     }
     
     func collectionView(_ imageCollection: UICollectionView, numberOfItemsInSection section: Int)-> Int{
@@ -60,11 +50,8 @@ class ProtectedGallery: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ imageCollection: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
-   
         let image = images[indexPath.row]
-        
         cell.imageView.image = image;
         return cell
-        
     }
 }

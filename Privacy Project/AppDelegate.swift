@@ -11,16 +11,11 @@ import CoreData
 import Photos
 import Firebase
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
         FirebaseApp.configure()
         return true
     }
@@ -30,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             if let window = self.window {
                 window.backgroundColor = UIColor.white
-                
                 let nav = UINavigationController()
                 let mainView = ViewController()
                 nav.viewControllers = [mainView]
@@ -65,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -94,7 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -108,8 +100,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
-    
-    
 }
 

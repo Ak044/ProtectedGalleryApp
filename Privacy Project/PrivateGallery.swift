@@ -10,56 +10,44 @@ import UIKit
 import Photos
 import Firebase
 
-
 //var finalImage: UIImage!
 
 class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate{
-    
     var finalImage: UIImage!
-
     // Two variables for the colelction view and
     // image array
     var myCollectionView: UICollectionView!
     var imageArray=[UIImage]()
     
-    
     override func viewDidLoad() {
-        print("Private Gallery Executed.")
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         if finalImage != nil {
             print("Contains a value!")
         } else {
-            print("Doesn’t contain a value.")
+            print("Doesn’t contain a value!")
         }
-        
        // browsingImage.image = finalImage
         
         self.title = "Private Photos"
+        // This initializes the collection view
+        let layout = UICollectionViewFlowLayout()
                
-                // This initializes the collection view
-               let layout = UICollectionViewFlowLayout()
-               
-               myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-               myCollectionView.delegate=self
-               myCollectionView.dataSource=self
-               myCollectionView.register(PhotoItemCell.self, forCellWithReuseIdentifier: "Cell")
-               myCollectionView.backgroundColor=UIColor.white
-               self.view.addSubview(myCollectionView)
+        myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        myCollectionView.delegate=self
+        myCollectionView.dataSource=self
+        myCollectionView.register(PhotoItemCell.self, forCellWithReuseIdentifier: "Cell")
+        myCollectionView.backgroundColor=UIColor.white
+        self.view.addSubview(myCollectionView)
                
         myCollectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
           
         imageArray = []
 
-        if finalImage != nil
-        {
+        if finalImage != nil{
           //  imageArray = []
             grabPhotos()
         }
-        
-        
     }
 
     //MARK: CollectionView
@@ -101,7 +89,7 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
         myCollectionView.collectionViewLayout.invalidateLayout()
     }
     
- /*   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
     }
     
@@ -112,13 +100,9 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
     //This function is to grab the photos
     //from the camera
     func grabPhotos(){
-     
-       //imageArray = []
-   //     self.imageArray.append(finalImage)
-        
-     //   self.myCollectionView.reloadData()
-
-        
+        //imageArray = []
+        //self.imageArray.append(finalImage)
+        //self.myCollectionView.reloadData()
 
         /*imageArray = []
         
@@ -156,20 +140,14 @@ class PrivateGallery: UIViewController,UICollectionViewDelegate, UICollectionVie
     
     @IBAction func onGoToPrivacyProject(_ sender: Any) {
     }
-    
-    
-    
 }
-
 
 // This class is used for each cell of the image
 class PhotoItemCell: UICollectionViewCell {
-    
     var img = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         img.contentMode = .scaleAspectFill
         img.clipsToBounds=true
         self.addSubview(img)

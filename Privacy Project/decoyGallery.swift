@@ -11,7 +11,6 @@ import UIKit
 import Photos
 
 class decoyGallery: UIViewController{
-    
     override func viewDidLoad() {
         print("Decoy Gallery Executed.")
         super.viewDidLoad()

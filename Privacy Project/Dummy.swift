@@ -9,9 +9,8 @@
 import UIKit
 
 class Dummy: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Var executed")
+        print("Dummy executed.")
     }
 }
