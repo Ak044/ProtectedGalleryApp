@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     var Image : UIImage!
+    var images = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +20,20 @@ class ViewController: UIViewController {
             print("Contains a value segue in main view control!")
         } else {
             print("Doesn’t contain a value segue in main view control!")
+        }
+        
+        if images == nil{
+            images = [UIImage]()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCameraImport"{
+            let vc = segue.destination as! CameraAndPhotoManager
+            vc.images = images
+        } else if segue.identifier == "toPrivateGallery"{
+            let vc = segue.destination as! PrivateGallery
+            vc.images = images
         }
     }
 

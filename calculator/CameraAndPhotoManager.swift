@@ -10,6 +10,8 @@ import UIKit
 
 class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var images = [UIImage]()
+    
     //Declare image variables
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage! 
@@ -82,8 +84,9 @@ class CameraAndPhotoManager: UIViewController, UIImagePickerControllerDelegate, 
     
     //Prepare the image for transferring (seguing) to other view controller(s)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ViewController
+        let vc = segue.destination as! PrivateGallery
         vc.Image = image
+        vc.images = images
         if image != nil {
             print("Contains a value to segue via code!")
         } else {

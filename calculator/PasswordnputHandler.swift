@@ -78,6 +78,7 @@ class PasswordInputHandler: UIViewController, UITextFieldDelegate {
             context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message - Touch ID") { (good, error) in
             if(good){
                 print("Success.")
+                self.performSegue(withIdentifier: "Private", sender: self)
             }
             else{
                 print("Try Again.")
@@ -92,6 +93,7 @@ class PasswordInputHandler: UIViewController, UITextFieldDelegate {
             context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message - Face ID") { (good, error) in
             if(good){
                 print("Success.")
+                self.performSegue(withIdentifier: "Private", sender: self)
             }
             else{
                 print("Try Again")
