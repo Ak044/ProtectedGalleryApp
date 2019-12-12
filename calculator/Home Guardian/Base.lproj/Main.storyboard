@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbw-ek-qTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5592.753623188406" y="-2568.0803571428569"/>
+            <point key="canvasLocation" x="3772" y="-2552"/>
         </scene>
         <!--App Navigator-->
         <scene sceneID="sB3-bE-j3m">
@@ -173,7 +173,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yx8-3G-aq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="-2552"/>
+            <point key="canvasLocation" x="1530" y="-2552"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="l1I-Tc-PSA">
@@ -253,7 +253,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzy-Cj-gM4" sceneMemberID="firstResponder"/>
                 <exit id="LO3-iA-J09" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3905.7971014492755" y="-2552.0089285714284"/>
+            <point key="canvasLocation" x="3012" y="-2552"/>
         </scene>
         <!--Protected Gallery-->
         <scene sceneID="15x-0H-sVU">
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTj-YO-v60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3906" y="-1657"/>
+            <point key="canvasLocation" x="5661" y="-1070"/>
         </scene>
         <!--Decoy Gallery-->
         <scene sceneID="zNO-Re-aRP">
@@ -365,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adP-Nu-dRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="-1657"/>
+            <point key="canvasLocation" x="2280" y="-1814"/>
         </scene>
         <!--Private Gallery-->
         <scene sceneID="gsp-7P-bsx">
@@ -428,14 +428,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5c-5R-FrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6686" y="-2568"/>
+            <point key="canvasLocation" x="3355" y="-1748"/>
         </scene>
     </scenes>
     <resources>
         <image name="background2" width="414" height="896"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0eu-Lj-G6b"/>
+        <segue reference="XLc-OO-3Mg"/>
         <segue reference="quy-gh-VCe"/>
         <segue reference="Jzw-lj-Irp"/>
     </inferredMetricsTieBreakers>
